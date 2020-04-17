@@ -1,2 +1,3 @@
-# terraform-docker
-learning to control docker from terraform
+# Terraform-docker
+
+my basic repository I was using whilst I learned to use terraform to control docker deployments
