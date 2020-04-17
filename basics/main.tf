@@ -6,7 +6,7 @@ provider "docker" {
 }
 
 
-
+#########################################################################
 #Define variables
 variable "image_name" {
   description = "Image for container."
@@ -31,18 +31,19 @@ variable "ext_port" {
 
 
 
+#########################################################################
 # Download the latest Ghost image
 resource "docker_image" "image_id" {
-  name = "ghost:latest"
+  name = "${var.image_name}"
 }
 
 # Start the Container
 resource "docker_container" "container_id" {
-  name  = "ghost_blog"
+  name  = "${var.container_name}"
   image = "${docker_image.image_id.latest}"
   ports {
-    internal = "2368"
-    external = "80"
+    internal = "${var.int_port}"
+    external = "${var.ext_port}"
   }
 }
 
