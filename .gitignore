@@ -1,3 +1,4 @@
 basics/terraform.tfstate.backup
 basics/terraform.tfstate
 
+basics/tfplan
